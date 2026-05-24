@@ -10,148 +10,186 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 	<style>
 		:root {
-			--royal-900: #0b1f5e;
-			--royal-800: #153eaa;
-			--royal-700: #1f57d0;
-			--royal-100: #eaf0ff;
-			--ink: #1a2742;
-			--muted: #52627d;
-			--card-border: #dce6ff;
+			--accent: #2a5bd7;
+			--accent-dark: #1f46a8;
+			--text-main: #17233c;
+			--text-muted: #586985;
+			--panel: #ffffff;
+			--line: #dfe6f5;
+			--soft: #f5f8ff;
 		}
-
-
 
 		body {
-			background: radial-gradient(circle at top right, #f5f8ff 0%, #ffffff 45%);
+			background: linear-gradient(180deg, #f7f9fe 0%, #ffffff 35%);
+			color: var(--text-main);
 		}
 
-		a, a:visited { color: var(--royal-700); }
-		a:hover { color: var(--royal-800); }
+		a, a:visited { color: var(--accent); }
+		a:hover { color: var(--accent-dark); }
 
 		#main {
-			max-width: 1080px;
+			max-width: 1120px;
 		}
 
-		#one {
-			background: linear-gradient(180deg, #ffffff 0%, #f9fbff 100%);
-			padding: 2rem 2rem 1.5rem;
-			border-radius: 18px;
-			border: 1px solid #e4ebff;
-			box-shadow: 0 18px 30px rgba(17, 44, 112, 0.08);
-			margin-bottom: 2rem;
-		}
-		#header .inner h1 { line-height: 1.2; }
-
-		.lead-note {
-			margin-top: 0.75em;
-			font-size: 0.95em;
-			color: rgba(255, 255, 255, 0.9);
+		.lab-shell {
+			display: grid;
+			grid-template-columns: 1.15fr 0.85fr;
+			gap: 1.2rem;
+			margin-bottom: 1.4rem;
 		}
 
-		#main > section { padding-bottom: 2.35em; }
+		.lab-panel {
+			background: var(--panel);
+			border: 1px solid var(--line);
+			border-radius: 14px;
+			padding: 1.2rem 1.3rem;
+			box-shadow: 0 8px 26px rgba(20, 49, 110, 0.06);
+		}
 
-		.section-top {
+		.panel-kicker {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.45rem;
+			font-size: 0.77rem;
+			text-transform: uppercase;
+			font-weight: 700;
+			letter-spacing: 0.04em;
+			color: var(--accent-dark);
+			background: var(--soft);
+			padding: 0.24rem 0.65rem;
+			border-radius: 999px;
+			margin-bottom: 0.7rem;
+		}
+
+		.profile-grid {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 0.7rem;
+			margin-top: 0.8rem;
+		}
+
+		.mini-item {
+			padding: 0.7rem 0.8rem;
+			background: #fff;
+			border: 1px solid var(--line);
+			border-radius: 10px;
+			font-size: 0.94rem;
+			color: var(--text-muted);
+		}
+
+		.mini-item strong { color: var(--text-main); display: block; }
+
+		.research-focus {
+			list-style: none;
+			margin: 0.2rem 0 0;
+			padding: 0;
+			display: grid;
+			gap: 0.55rem;
+		}
+
+		.research-focus li {
 			display: flex;
-			align-items: baseline;
+			gap: 0.6rem;
+			align-items: start;
+			color: var(--text-muted);
+		}
+
+		.research-focus i { color: var(--accent); margin-top: 0.2rem; }
+
+		.section-head {
+			display: flex;
 			justify-content: space-between;
-			gap: 1rem;
+			align-items: baseline;
+			gap: 0.9rem;
 			flex-wrap: wrap;
 		}
 
-		.section-label {
-			display: inline-flex;
-			align-items: center;
-			gap: 0.5rem;
-			background: var(--royal-100);
-			color: var(--royal-800);
-			border-radius: 999px;
-			padding: 0.3rem 0.8rem;
-			font-size: 0.8rem;
-			font-weight: 700;
-			letter-spacing: 0.02em;
-			text-transform: uppercase;
-			margin-bottom: 0.8rem;
+		.card-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
+			gap: 0.9rem;
+			margin-top: 0.9rem;
 		}
+
+		.info-card {
+			background: #fff;
+			border: 1px solid var(--line);
+			border-radius: 12px;
+			padding: 1rem 1rem 0.95rem;
+		}
+
+		.info-card h3 {
+			display: flex;
+			align-items: center;
+			gap: 0.45rem;
+			margin-bottom: 0.35rem;
+		}
+
+		.info-card p { margin: 0; color: var(--text-muted); font-size: 0.94rem; }
 
 		.edu-list {
 			list-style: none;
 			padding: 0;
-			margin: 0.25rem 0 0;
+			margin: 0.75rem 0 0;
 			display: grid;
-			gap: 0.9rem;
+			gap: 0.65rem;
 		}
 
 		.edu-list li {
 			display: grid;
-			grid-template-columns: 2.2rem 1fr;
-			gap: 0.75rem;
-			align-items: start;
-			padding: 0.85rem 1rem;
-			border: 1px solid var(--card-border);
-			border-radius: 12px;
-			background: #fff;
-			box-shadow: 0 8px 20px rgba(18, 39, 87, 0.06);
+			grid-template-columns: 2rem 1fr;
+			gap: 0.7rem;
+			padding: 0.75rem 0.85rem;
+			border: 1px solid var(--line);
+			border-radius: 10px;
 		}
 
-		.edu-icon {
-			width: 2.2rem;
-			height: 2.2rem;
-			display: inline-flex;
-			align-items: center;
-			justify-content: center;
-			border-radius: 50%;
-			background: var(--royal-100);
-			color: var(--royal-700);
-		}
-
-		.edu-list strong { color: var(--ink); }
-		.edu-list span { color: var(--muted); font-size: 0.95rem; }
-
-		.modern-grid {
-			display: grid;
-			grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-			gap: 1.1rem;
-		}
-
-		.modern-card {
-			background: #fff;
-			border: 1px solid var(--card-border);
-			border-radius: 14px;
-			padding: 1.1rem 1.2rem;
-			box-shadow: 0 10px 24px rgba(18, 39, 87, 0.08);
-			transition: transform 0.18s ease, box-shadow 0.18s ease;
-		}
-
-		.modern-card:hover {
-			transform: translateY(-3px);
-			box-shadow: 0 14px 30px rgba(18, 39, 87, 0.12);
-		}
-
-		.modern-card h3 { margin-bottom: 0.35rem; display:flex; align-items:center; gap:0.45rem; }
-		.modern-card p { margin-bottom: 0; color: var(--muted); font-size: 0.95rem; }
+		.edu-list i { color: var(--accent); margin-top: 0.2rem; }
 
 		.pub-list {
 			list-style: none;
 			padding: 0;
+			margin: 0.85rem 0 0;
 			display: grid;
-			gap: 0.85rem;
-			margin-top: 0.6rem;
+			gap: 0.65rem;
 		}
 
 		.pub-list li {
-			position: relative;
-			overflow: hidden;
+			border: 1px solid var(--line);
 			background: #fff;
-			border: 1px solid var(--card-border);
-			border-radius: 12px;
-			padding: 0.9rem 1rem;
-			box-shadow: 0 8px 20px rgba(18, 39, 87, 0.06);
+			border-radius: 10px;
+			padding: 0.82rem 0.9rem;
+			position: relative;
+		}
+
+		.pub-list li::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: 3px;
+			background: var(--accent);
+			border-radius: 10px 0 0 10px;
 		}
 
 		.pub-list a { font-weight: 600; border-bottom: none; }
-		.pub-list li::before { content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background: linear-gradient(var(--royal-700), #6d95ff); }
-		.pub-meta { display: block; font-size: 0.86rem; color: var(--muted); margin-top: 0.2rem; }
-		.quick-links { font-size: 0.92rem; }
+		.pub-meta { display:block; font-size: 0.86rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+
+		.pub-tools {
+			position: absolute;
+			right: 0.55rem;
+			bottom: 0.4rem;
+			display: inline-flex;
+			gap: 0.35rem;
+			font-size: 0.8rem;
+			color: #7a8aa8;
+		}
+		@media screen and (max-width: 980px) {
+			.lab-shell { grid-template-columns: 1fr; }
+			.profile-grid { grid-template-columns: 1fr; }
+		}
 	</style>
 </head>
 <body class="is-preload">
@@ -161,62 +199,68 @@
 		<div class="inner">
 			<h1><strong>Shaswat Mohanty</strong></h1>
 			<p>Algorithm Developer at Applied Materials, Inc.<br />
-			Process Optimization and Control<br />
-			Former Postdoctoral Researcher at Stanford University</p>
-			<p class="lead-note">Computational materials science · Physics-informed ML · Scalable simulation methods</p>
+			Process Optimization and Control <br />
+			Former Postdoctoral Researcher at Stanford University
+			</p>
 		</div>
 	</header>
 
 	<div id="main">
 		<section id="one">
-			<header class="major">
-				<span class="section-label"><i class="icon solid fa-user-graduate"></i> Profile</span>
-				<h2>About Me</h2>
-			</header>
-			<p>
-				I build computational methods for materials and process systems, combining scientific computing, multiscale modeling,
-				and machine learning to deliver practical, transferable tools. My work spans polymer networks, ceramics, battery systems,
-				and X-ray diagnostics, with an emphasis on robust algorithms and interpretable modeling.
-			</p>
+			<div class="lab-shell">
+				<article class="lab-panel">
+					<span class="panel-kicker"><i class="icon solid fa-flask"></i> Research Profile</span>
+					<h2>Computational Materials & Multiscale Modeling</h2>
+					<p>
+						I develop computational methods for materials and process systems by combining scientific computing,
+						physics-informed machine learning, and multiscale simulation. My work emphasizes transferable models,
+						robust algorithms, and clear physical interpretability.
+					</p>
+					<div class="profile-grid">
+						<div class="mini-item"><strong>Current Role</strong>Algorithm Developer, Applied Materials</div>
+						<div class="mini-item"><strong>Prior Academic Role</strong>Postdoctoral Researcher, Stanford</div>
+						<div class="mini-item"><strong>Core Domains</strong>Computational Mechanics · Deep Learning · Process Optimization</div>
+						<div class="mini-item"><strong>Methods</strong>MD, stochastic processes, ML force fields</div>
+					</div>
+				</article>
+				<article class="lab-panel">
+					<span class="panel-kicker"><i class="icon solid fa-crosshairs"></i> Focus Areas</span>
+					<ul class="research-focus">
+						<li><i class="icon solid fa-check-circle"></i><span>Generalizable force-field modeling and transferability assessment.</span></li>
+						<li><i class="icon solid fa-check-circle"></i><span>Network-physics driven understanding of polymer mechanics and failure.</span></li>
+						<li><i class="icon solid fa-check-circle"></i><span>Simulation-to-experiment methods for X-ray and process-relevant observables.</span></li>
+						<li><i class="icon solid fa-check-circle"></i><span>Algorithmic workflows for scale-up and robust deployment.</span></li>
+						<li><i class="icon solid fa-check-circle"></i><span>Uncertainty-aware modeling for process optimization.</span></li>
+					</ul>
 
-			<h3>Education</h3>
-			<ul class="edu-list">
-				<li>
-					<span class="edu-icon"><i class="icon solid fa-graduation-cap"></i></span>
-					<span><strong>Ph.D. in Mechanical Engineering</strong><br />Stanford University, USA — <a href="https://purl.stanford.edu/vv258vb0486" target="_blank">Dissertation</a></span>
-				</li>
-				<li>
-					<span class="edu-icon"><i class="icon solid fa-university"></i></span>
-					<span><strong>M.Tech in Mechanical Engineering (Product Design)</strong><br />Indian Institute of Technology Madras, India — <a href="https://www.researchgate.net/profile/Shaswat-Mohanty/publication/335365285_A_Numerical_Study_on_the_Coupled_Electro-Chemo-Mechanics_of_Lithium-ion_Battery_Anode_Materials_for_High_Energy_Density_Applications/links/5d6eb25d45851542789f70be/A-Numerical-Study-on-the-Coupled-Electro-Chemo-Mechanics-of-Lithium-ion-Battery-Anode-Materials-for-High-Energy-Density-Applications.pdf" target="_blank">Master's Thesis</a></span>
-				</li>
-				<li>
-					<span class="edu-icon"><i class="icon solid fa-book"></i></span>
-					<span><strong>B.Tech in Mechanical Engineering</strong><br />Indian Institute of Technology Madras, India</span>
-				</li>
-			</ul>
+					<h3 style="margin-top:1rem;">Education</h3>
+					<ul class="edu-list">
+						<li><i class="icon solid fa-graduation-cap"></i><span><strong>Ph.D., Mechanical Engineering</strong><br />Stanford University — <a href="https://purl.stanford.edu/vv258vb0486" target="_blank">Dissertation</a></span></li>
+						<li><i class="icon solid fa-university"></i><span><strong>M.Tech, Mechanical Engineering (Product Design)</strong><br />IIT Madras — <a href="https://www.researchgate.net/profile/Shaswat-Mohanty/publication/335365285_A_Numerical_Study_on_the_Coupled_Electro-Chemo-Mechanics_of_Lithium-ion_Battery_Anode_Materials_for_High_Energy_Density_Applications/links/5d6eb25d45851542789f70be/A-Numerical-Study-on-the-Coupled-Electro-Chemo-Mechanics-of-Lithium-ion-Battery-Anode-Materials-for-High-Energy-Density-Applications.pdf" target="_blank">Master's Thesis</a></span></li>
+						<li><i class="icon solid fa-book"></i><span><strong>B.Tech, Mechanical Engineering</strong><br />IIT Madras</span></li>
+					</ul>
+				</article>
+			</div>
 		</section>
 
 		<section id="two">
-			<div class="section-top">
-				<div>
-					<span class="section-label"><i class="icon solid fa-code"></i> Open Source</span>
-					<h2>Computational Tools & Code</h2>
-				</div>
+			<div class="section-head">
+				<h2><i class="icon solid fa-code"></i> Computational Tools & Open Source</h2>
 			</div>
-			<div class="modern-grid">
-				<article class="modern-card">
-					<h3><i class="icon solid fa-wave-square"></i><a href="https://gitlab.com/micronano_public/c-xpcs">C-XPCS</a></h3>
+			<div class="card-grid">
+				<article class="info-card">
+					<h3><i class="icon solid fa-x-ray"></i><a href="https://gitlab.com/micronano_public/c-xpcs">C-XPCS</a></h3>
 					<p>Computational X-ray Photon Correlation Spectroscopy workflows from molecular simulation trajectories.</p>
 				</article>
-				<article class="modern-card">
-					<h3><i class="icon solid fa-robot"></i><a href="https://gitlab.com/micronano_public/tb-mlff">TB-MLFF</a></h3>
+				<article class="info-card">
+					<h3><i class="icon solid fa-brain"></i><a href="https://gitlab.com/micronano_public/tb-mlff">TB-MLFF</a></h3>
 					<p>Testbed to benchmark and generalize machine-learned force fields across polymer systems.</p>
 				</article>
-				<article class="modern-card">
+				<article class="info-card">
 					<h3><i class="icon solid fa-project-diagram"></i><a href="https://gitlab.com/micronano_public/PolyBranchX">PolyBranchX</a></h3>
 					<p>Algorithms for shortest-path statistics in branched polymer networks and complex topologies.</p>
 				</article>
-				<article class="modern-card">
+				<article class="info-card">
 					<h3><i class="icon solid fa-cubes"></i><a href="https://gitlab.com/micronano_public/polymer_md">POLYMER_MD</a></h3>
 					<p>Simulation-ready preparation and initialization of polymer network structures.</p>
 				</article>
@@ -224,22 +268,19 @@
 		</section>
 
 		<section id="three">
-			<div class="section-top">
-				<div>
-					<span class="section-label"><i class="icon solid fa-book-open"></i> Research</span>
-					<h2>Selected Publications</h2>
-				</div>
-				<span class="quick-links"><a href="https://scholar.google.co.in/citations?user=zs4pPCEAAAAJ&hl=en&oi=ao">View full publication list on Google Scholar</a></span>
+			<div class="section-head">
+				<h2><i class="icon solid fa-book-open"></i> Selected Publications</h2>
+				<span><a href="https://scholar.google.co.in/citations?user=zs4pPCEAAAAJ&hl=en&oi=ao">View full list on Google Scholar</a></span>
 			</div>
 			<ul class="pub-list">
-				<li><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/adts.202401058">Generalizability of Graph Neural Network Force Fields for Predicting Solid‐State Properties</a><span class="pub-meta">Advanced Theory and Simulations, 2024</span></li>
-				<li><a href="https://pubs.acs.org/doi/abs/10.1021/acs.macromol.4c00409">Network evolution controlling strain-induced damage and self-healing of elastomers with dynamic bonds</a><span class="pub-meta">Macromolecules, 2024</span></li>
-				<li><a href="https://doi.org/10.1016/j.cpc.2023.108723">Evaluating the transferability of machine-learned force fields for material property modeling</a><span class="pub-meta">Computer Physics Communications, 2024</span></li>
-				<li><a href="https://www.sciencedirect.com/science/article/am/pii/S0022509624001029">Modeling shortest paths in polymeric networks using spatial branching processes</a><span class="pub-meta">Journal of the Mechanics and Physics of Solids</span></li>
-				<li><a href="https://www.nature.com/articles/s41598-023-43804-5">Development of scalable and generalizable machine learned force field for polymers</a><span class="pub-meta">Scientific Reports, 2023</span></li>
-				<li><a href="https://iopscience.iop.org/article/10.1088/1361-651X/ac860c">Computational approaches to model X-ray photon correlation spectroscopy from molecular dynamics</a><span class="pub-meta">Modelling and Simulation in Materials Science and Engineering, 2022</span></li>
-				<li><a href="https://www.sciencedirect.com/science/article/pii/S2405829722005475">High energy density flexible and ecofriendly lithium-ion smart battery</a><span class="pub-meta">Energy Storage Materials</span></li>
-				<li><a href="https://www.nature.com/articles/s41524-026-02143-5_reference.pdf">Why is the strength of an elastomeric polymer network so low</a><span class="pub-meta">npj Computational Materials, 2026</span></li>
+				<li><a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/adts.202401058">Generalizability of Graph Neural Network Force Fields for Predicting Solid‐State Properties</a><span class="pub-meta">Advanced Theory and Simulations, 2024</span><span class="pub-tools" title="Likely tools"><i class="icon solid fa-brain"></i><i class="icon solid fa-cubes"></i></span></li>
+				<li><a href="https://pubs.acs.org/doi/abs/10.1021/acs.macromol.4c00409">Network evolution controlling strain-induced damage and self-healing of elastomers with dynamic bonds</a><span class="pub-meta">Macromolecules, 2024</span><span class="pub-tools" title="Likely tools"><i class="icon solid fa-project-diagram"></i><i class="icon solid fa-cubes"></i></span></li>
+				<li><a href="https://doi.org/10.1016/j.cpc.2023.108723">Evaluating the transferability of machine-learned force fields for material property modeling</a><span class="pub-meta">Computer Physics Communications, 2024</span><span class="pub-tools" title="Likely tools"><i class="icon solid fa-brain"></i><i class="icon solid fa-vial"></i></span></li>
+				<li><a href="https://www.sciencedirect.com/science/article/am/pii/S0022509624001029">Modeling shortest paths in polymeric networks using spatial branching processes</a><span class="pub-meta">Journal of the Mechanics and Physics of Solids</span><span class="pub-tools" title="Likely tools"><i class="icon solid fa-project-diagram"></i><i class="icon solid fa-code-branch"></i></span></li>
+				<li><a href="https://www.nature.com/articles/s41598-023-43804-5">Development of scalable and generalizable machine learned force field for polymers</a><span class="pub-meta">Scientific Reports, 2023</span><span class="pub-tools" title="Likely tools"><i class="icon solid fa-brain"></i><i class="icon solid fa-cubes"></i></span></li>
+				<li><a href="https://iopscience.iop.org/article/10.1088/1361-651X/ac860c">Computational approaches to model X-ray photon correlation spectroscopy from molecular dynamics</a><span class="pub-meta">Modelling and Simulation in Materials Science and Engineering, 2022</span><span class="pub-tools" title="Likely tools"><i class="icon solid fa-x-ray"></i><i class="icon solid fa-wave-square"></i></span></li>
+				<li><a href="https://www.sciencedirect.com/science/article/pii/S2405829722005475">High energy density flexible and ecofriendly lithium-ion smart battery</a><span class="pub-meta">Energy Storage Materials</span><span class="pub-tools" title="Likely tools"><i class="icon solid fa-battery-half"></i><i class="icon solid fa-chart-line"></i></span></li>
+				<li><a href="https://www.nature.com/articles/s41524-026-02143-5_reference.pdf">Why is the strength of an elastomeric polymer network so low</a><span class="pub-meta">npj Computational Materials, 2026</span><span class="pub-tools" title="Likely tools"><i class="icon solid fa-link"></i><i class="icon solid fa-chart-area"></i></span></li>
 			</ul>
 		</section>
 	</div>
